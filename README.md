@@ -1,21 +1,21 @@
 # Автотесты weatherapi.com
 
-Автотесты эндпоинта текущей погоды weatherapi.com (`GET /v1/current.json`).
+Автотесты эндпоинта погоды weatherapi.com (`GET /v1/current.json`).
 
 ## 1. Что покрывают тесты
 
 ### Позитивный сценарий
 
-Набор городов задаётся файлом тестовых данных - код при добавлении города менять не нужно:
+Набор городов задаётся файлом тестовых данных, код при добавлении города менять не нужно:
 
 - регистрируется заглушка успешного ответа для города
-- выполняется запрос → HTTP 200
+- выполняется запрос HTTP 200
 - ответ десериализуется в модель `WeatherResponse`
 - имя города в ответе совпадает с запрошенным
 - к заглушке выполнен ровно один запрос с корректными `q` и `key`
-- все поля ответа сравниваются с эталоном из тестовых данных
+- все поля ответа сравниваются с ожиданием из тестовых данных
 - таблица сравнения `Поле / Ожидаемое / Фактическое / Статус` прикладывается к Allure-отчёту
-- выводит расхождения по результату сравнения по каждому значению в лог
+- выводится расхождения по результату сравнения по каждому значению в лог
 
 ### Негативные сценарии (ошибки API)
 
@@ -26,7 +26,7 @@
 | `invalid_api_key` | 401 | 2006 | API key provided is invalid |
 | `quota_exceeded` | 403 | 2007 | API key has exceeded calls per month quota |
 
-Для каждого сценария регистрируется заглушка с точным матчем параметров, проверяются HTTP-статус, `error.code`, `error.message`.
+Для каждого сценария регистрируется заглушка с точным мэтчем параметров, проверяются HTTP-статус, `error.code`, `error.message`.
 
 ---
 
@@ -34,15 +34,15 @@
 
 | Инструмент | Назначение |
 |---|---|
-| Java 21 | records, pattern matching, современный API |
+| Java 21 |  |
 | Maven | сборка и запуск |
 | Cucumber 7 (JVM) | BDD-сценарии на русском |
 | JUnit 5 Platform Suite | точка входа `RunCucumberTest`, интеграция движка Cucumber |
 | RestAssured | HTTP-клиент |
-| Jackson | маппинг snake_case JSON → DTO-records |
+| Jackson | маппинг snake_case JSON DTO-records |
 | WireMock | эмуляция WeatherAPI.com, верификация запросов, near-miss анализ |
 | Allure  | отчётность, аттачменты, environment |
-| AssertJ | проверки, в т.ч. `SoftAssertions` |
+| AssertJ | проверки, `SoftAssertions` |
 | SLF4J + Logback | логирование |
 
 ---
@@ -56,10 +56,10 @@
 | `org.weather.runner` | `RunCucumberTest` |
 | `org.weather.glue` | `Hooks` (жизненный цикл WireMock, near-miss контроль, журнал при падении), `ScenarioState` (контекст) |
 | `org.weather.steps` | реализации шагов: `WeatherSteps`, `ApiErrorSteps`, `CommonSteps` |
-| `org.weather.client` | `WeatherApiClient`, `HttpClientFactory` (Jackson-конфиг для RestAssured), `dto` - иммутабельные records |
-| `org.weather.wiremock` | `WireMockServerHolder` (одиночный инстанс сервера), `stubs` - регистрация заглушек |
+| `org.weather.client` | `WeatherApiClient`, `HttpClientFactory` (Jackson-конфиг для RestAssured), `dto` |
+| `org.weather.wiremock` | `WireMockServerHolder` (одиночный инстанс сервера), `stubs` |
 | `org.weather.data` | провайдер тестовых данных (`cities.json`), фабрика запросов для сценариев ошибок |
-| `org.weather.comparison` | рекурсивное сравнение фактического и эталонного ответов, `null` в ожидаемых полях пропускаются |
+| `org.weather.comparison` | рекурсивное сравнение фактического и ожидаемого ответов, `null` в ожидаемых полях пропускаются |
 | `org.weather.config` | единая точка конфигурации |
 | `org.weather.allure` | фильтр-аттачменты HTTP с маскированием ключа, запись `environment.properties` |
 
@@ -97,13 +97,13 @@ mvn allure:serve
 
 ## 5. Отчёт Allure
 
-Результаты пишутся в `allure-results/` в корне проекта (создаётся при прогоне).
+Результаты пишутся в `allure-results/` в корне проекта.
 
 Что попадает в отчёт:
 
 - текст Gherkin-сценария со статусами шагов
-- аттачменты HTTP запрос / ответ, `api.key` замаскирован
-- таблица сравнения полей ответа с эталоном
+- аттачменты HTTP запрос
+- таблица сравнения полей ответа с ожидаемым значением
 - при падении сценария
 - при наличии несматченных запросов
 - секция Environment
