@@ -1,0 +1,43 @@
+Статус: 200
+Тело:
+{
+  "location": {
+    "name": "New York",
+    "region": "New York",
+    "country": "United States",
+    "lat": 40.71,
+    "lon": -74.01,
+    "tz_id": "America/New_York",
+    "localtime_epoch": 1791792000,
+    "localtime": "2026-10-12 08:00"
+  },
+  "current": {
+    "last_updated_epoch": 1791791400,
+    "last_updated": "2026-10-12 07:45",
+    "temp_c": 18.3,
+    "temp_f": 64.9,
+    "is_day": 1,
+    "condition": {
+      "text": "Sunny",
+      "icon": "//cdn.weatherapi.com/weather/64x64/day/113.png",
+      "code": 1000
+    },
+    "wind_mph": 8.9,
+    "wind_kph": 14.4,
+    "wind_degree": 20,
+    "wind_dir": "NNE",
+    "pressure_mb": 1016,
+    "pressure_in": 30.01,
+    "precip_mm": 0,
+    "precip_in": 0,
+    "humidity": 64,
+    "cloud": 0,
+    "feelslike_c": 18.1,
+    "feelslike_f": 64.6,
+    "vis_km": 16,
+    "vis_miles": 10,
+    "uv": 5,
+    "gust_mph": 20.4,
+    "gust_kph": 32.8
+  }
+}

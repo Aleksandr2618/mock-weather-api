@@ -1,0 +1,16 @@
+Сравнение значений ответа с ожидаемыми:
+
+Поле                       | Ожидаемое          | Фактическое        | Статус
+location.name              | New York           | New York           | OK
+location.country           | United States      | United States      | OK
+location.lat               | 40.71              | 40.71              | OK
+location.lon               | -74.01             | -74.01             | OK
+location.tz_id             | America/New_York   | America/New_York   | OK
+current.temp_c             | 18.3               | 18.3               | OK
+current.is_day             | 1                  | 1                  | OK
+current.condition.text     | Sunny              | Sunny              | OK
+current.condition.code     | 1000               | 1000               | OK
+current.wind_kph           | 14.4               | 14.4               | OK
+current.wind_dir           | NNE                | NNE                | OK
+current.humidity           | 64                 | 64                 | OK
+current.feelslike_c        | 18.1               | 18.1               | OK

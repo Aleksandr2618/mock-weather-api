@@ -1,0 +1,3 @@
+Статус: 400
+Тело:
+{"error":{"code":1003,"message":"Parameter q is missing."}}

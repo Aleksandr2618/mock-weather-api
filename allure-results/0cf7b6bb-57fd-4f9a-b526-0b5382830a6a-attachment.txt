@@ -1,0 +1,2 @@
+Метод: GET
+URL: http://localhost:50332/v1/current.json?key=***&aqi=no

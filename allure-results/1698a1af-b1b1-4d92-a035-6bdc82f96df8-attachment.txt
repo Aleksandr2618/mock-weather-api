@@ -1,0 +1,3 @@
+Статус: 401
+Тело:
+{"error":{"code":2006,"message":"API key provided is invalid"}}

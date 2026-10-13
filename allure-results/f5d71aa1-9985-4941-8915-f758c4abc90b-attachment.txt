@@ -1,0 +1,16 @@
+Сравнение значений ответа с ожидаемыми:
+
+Поле                       | Ожидаемое          | Фактическое        | Статус
+location.name              | London             | London             | OK
+location.country           | United Kingdom     | United Kingdom     | OK
+location.lat               | 51.51              | 51.51              | OK
+location.lon               | -0.13              | -0.13              | OK
+location.tz_id             | Europe/London      | Europe/London      | OK
+current.temp_c             | 11.8               | 11.8               | OK
+current.is_day             | 1                  | 1                  | OK
+current.condition.text     | Overcast           | Overcast           | OK
+current.condition.code     | 1009               | 1009               | OK
+current.wind_kph           | 19.8               | 19.8               | OK
+current.wind_dir           | WSW                | WSW                | OK
+current.humidity           | 82                 | 82                 | OK
+current.feelslike_c        | 9.6                | 9.6                | OK
