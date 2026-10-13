@@ -1,0 +1,107 @@
+{
+  "cities": [
+    {
+      "city": "Moscow",
+      "stub_response_file": "testdata/current-weather/responses/moscow.json",
+      "expected": {
+        "location": {
+          "name": "Moscow",
+          "country": "Russia",
+          "lat": 55.7522,
+          "lon": 37.6156,
+          "tz_id": "Europe/Moscow"
+        },
+        "current": {
+          "temp_c": 14.4,
+          "temp_f": 58,
+          "is_day": 1,
+          "condition": {
+            "text": "Mist",
+            "code": 1030
+          },
+          "wind_kph": 9.7,
+          "wind_dir": "SW",
+          "pressure_mb": 1014,
+          "humidity": 75,
+          "feelslike_c": 12.6,
+          "vis_km": 5.7
+        }
+      }
+    },
+    {
+      "city": "London",
+      "stub_response_file": "testdata/current-weather/responses/london.json",
+      "expected": {
+        "location": {
+          "name": "London",
+          "country": "United Kingdom",
+          "lat": 51.51,
+          "lon": -0.13,
+          "tz_id": "Europe/London"
+        },
+        "current": {
+          "temp_c": 11.8,
+          "is_day": 1,
+          "condition": {
+            "text": "Overcast",
+            "code": 1009
+          },
+          "wind_kph": 19.8,
+          "wind_dir": "WSW",
+          "humidity": 82,
+          "feelslike_c": 9.6
+        }
+      }
+    },
+    {
+      "city": "New York",
+      "stub_response_file": "testdata/current-weather/responses/new_york.json",
+      "expected": {
+        "location": {
+          "name": "New York",
+          "country": "United States",
+          "lat": 40.71,
+          "lon": -74.01,
+          "tz_id": "America/New_York"
+        },
+        "current": {
+          "temp_c": 18.3,
+          "is_day": 1,
+          "condition": {
+            "text": "Sunny",
+            "code": 1000
+          },
+          "wind_kph": 14.4,
+          "wind_dir": "NNE",
+          "humidity": 64,
+          "feelslike_c": 18.1
+        }
+      }
+    },
+    {
+      "city": "Tokyo",
+      "stub_response_file": "testdata/current-weather/responses/tokyo.json",
+      "expected": {
+        "location": {
+          "name": "Tokyo",
+          "country": "Japan",
+          "lat": 35.69,
+          "lon": 139.69,
+          "tz_id": "Asia/Tokyo"
+        },
+        "current": {
+          "temp_c": 21.7,
+          "is_day": 0,
+          "condition": {
+            "text": "Partly cloudy",
+            "code": 1003
+          },
+          "wind_kph": 11.2,
+          "wind_dir": "E",
+          "humidity": 71,
+          "feelslike_c": 23.4
+        }
+      }
+    }
+  ]
+}
